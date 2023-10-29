@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{047caf25-5012-4a37-b9e5-834842bcc959}</ProjectGuid>
+    <RootNamespace>UwpDumper</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)third-party\Zydis;$(ProjectDir)third-party;$(ProjectDir)third-party\ixwebsocket;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)UwpDumperConsole\bin\Release</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;UWPDUMPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;UWPDUMPER_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>dbghelp.lib;Ws2_32.lib;Crypt32.lib;Wldap32.lib;Normaliz.lib;shlwapi.lib;runtimeobject.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;UWPDUMPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;UWPDUMPER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\communications\communications.h" />
+    <ClInclude Include="engine\dumper\dumper.h" />
+    <ClInclude Include="global\global.h" />
+    <ClInclude Include="memory\scanner\scanner.h" />
+    <ClInclude Include="memory\zywrap\zywrap.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXBase64.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXBench.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXCancellationRequest.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXConnectionState.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXDNSLookup.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXExponentialBackoff.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXGetFreePort.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXGzipCodec.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXHttp.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXHttpClient.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXHttpServer.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXNetSystem.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXProgressCallback.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSelectInterrupt.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSelectInterruptEvent.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSelectInterruptFactory.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSelectInterruptPipe.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSetThreadName.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocket.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketAppleSSL.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketConnect.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketFactory.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketMbedTLS.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketOpenSSL.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketServer.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXSocketTLSOptions.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXStrCaseCompare.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUdpSocket.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUniquePtr.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUrlParser.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUserAgent.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUtf8Validator.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXUuid.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocket.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketCloseConstants.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketCloseInfo.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketErrorInfo.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketHandshake.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketHandshakeKeyGen.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketHttpHeaders.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketInitResult.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketMessage.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketMessageType.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketOpenInfo.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflate.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflateCodec.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflateOptions.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketProxyServer.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketSendData.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketSendInfo.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketServer.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketTransport.h" />
+    <ClInclude Include="third-party\ixwebsocket\IXWebSocketVersion.h" />
+    <ClInclude Include="third-party\minhook\include\MinHook.h" />
+    <ClInclude Include="third-party\minhook\src\buffer.h" />
+    <ClInclude Include="third-party\minhook\src\hde\hde32.h" />
+    <ClInclude Include="third-party\minhook\src\hde\hde64.h" />
+    <ClInclude Include="third-party\minhook\src\hde\pstdint.h" />
+    <ClInclude Include="third-party\minhook\src\hde\table32.h" />
+    <ClInclude Include="third-party\minhook\src\hde\table64.h" />
+    <ClInclude Include="third-party\minhook\src\trampoline.h" />
+    <ClInclude Include="third-party\Zydis\Zydis.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="engine\communications\communications.cpp" />
+    <ClCompile Include="engine\dumper\address\address.cpp" />
+    <ClCompile Include="engine\dumper\dumper.cpp" />
+    <ClCompile Include="engine\dumper\encryption\encryption.cpp" />
+    <ClCompile Include="engine\dumper\offsets\offsets.cpp" />
+    <ClCompile Include="global\global.cpp" />
+    <ClCompile Include="memory\scanner\scanner.cpp" />
+    <ClCompile Include="memory\zywrap\zywrap.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXBench.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXCancellationRequest.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXConnectionState.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXDNSLookup.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXExponentialBackoff.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXGetFreePort.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXGzipCodec.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXHttp.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXHttpClient.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXHttpServer.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXNetSystem.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSelectInterrupt.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSelectInterruptEvent.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSelectInterruptFactory.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSelectInterruptPipe.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSetThreadName.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocket.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketAppleSSL.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketConnect.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketFactory.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketMbedTLS.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketOpenSSL.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketServer.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXSocketTLSOptions.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXStrCaseCompare.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXUdpSocket.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXUrlParser.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXUserAgent.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXUuid.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocket.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketCloseConstants.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketHandshake.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketHttpHeaders.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflate.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflateCodec.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketPerMessageDeflateOptions.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketProxyServer.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketServer.cpp" />
+    <ClCompile Include="third-party\ixwebsocket\IXWebSocketTransport.cpp" />
+    <ClCompile Include="third-party\minhook\src\buffer.c" />
+    <ClCompile Include="third-party\minhook\src\hde\hde32.c" />
+    <ClCompile Include="third-party\minhook\src\hde\hde64.c" />
+    <ClCompile Include="third-party\minhook\src\hook.c" />
+    <ClCompile Include="third-party\minhook\src\trampoline.c" />
+    <ClCompile Include="third-party\Zydis\Zydis.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
