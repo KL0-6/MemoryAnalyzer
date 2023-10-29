@@ -1,6 +1,6 @@
 # MemoryAnalyzer
 
-MemoryAnalyzer was a tool written by myself and @iDevastate to analyze 32 bit UWP Roblox modules. The main reason for this tool was to help speed up the process of dumping and gathering shuffles, encryptions, addresses and offsets by hand by using a software like Ghidra. This is a runtime program and uses Zydis to analyze memory.
+MemoryAnalyzer was a tool written by myself and [@iDevastate](https://www.github.com/iDevastate) to analyze 32 bit UWP Roblox modules. The main reason for this tool was to help speed up the process of dumping and gathering shuffles, encryptions, addresses and offsets by hand by using a software like Ghidra. This is a runtime program and uses Zydis to analyze memory.
 
 # Disclaimer
 
